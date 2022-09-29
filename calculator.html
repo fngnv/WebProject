@@ -9,24 +9,26 @@
 <body>
   <header class="topnav" id="mainNav">
     <a  class="icon" id="iconID"  ><i class="fa fa-bars"></i></a>
-    <a href="home.html">Pääsivu</a>
-    <a href="#review">Juomien arvosteluja</a>
-    <a class="active" href="calculator.html">Kofeiinilaskuri</a>
-    <a href="#map">Kartta</a>
+    <a href="home.html">PÄÄSIVU</a>
+    <a href="#review">JUOMIEN ARVOSTELUJA</a>
+    <a class="active" href="calculator.html">KOFEIINILASKURI</a>
+    <a href="#map">KARTTA</a>
   </header>
 
-  <p>Kofeiinimäärä grammoina</p>
-  <input id="gram" type="number">
-  <br>
-  <p>Hinta euroina</p>
-  <input id="price" type="number">
-  <p class="errorMessage" id="error"></p>
-  <br>
-  <button id="calculate">Laske</button>
-  <br><br>
-  <main>
+  <section class="calcSection">
+      <p>Kofeiinimäärä milligrammoina</p>
+      <input id="gram" type="number">
+      <br>
+      <p>Hinta euroina</p>
+      <input id="price" type="number">
+      <p class="errorMessage" id="error"></p>
+      <br>
+          <button class="buttonClass" id="calculate">Lähetä</button>
+    <br><br>
+    <main>
 
-  </main>
+    </main>
+  </section>
 
   <script src="scripts/menu.js"></script>
   <script src="scripts/calculator.js"></script>

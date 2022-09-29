@@ -1,30 +1,33 @@
 body{
-    font-family: Arial;
+    font-family: "Comic Sans MS";
     margin: 0;
 }
 
 .topnav {
     overflow: hidden;
-    background-color: black;
+    background-color: #BF3100;
 }
 
 .topnav a {
     float: left;
     display: block;
-    color: white;
+    background-color: #FCBF49;
+    color: black;
     text-align: center;
     padding: 14px 16px;
+    margin: 10px;
+    border-radius: 25px;
     text-decoration: none;
     font-size: 20px;
 }
 
 .topnav a:hover {
-    background-color: white;
+    background-color: #FDC85E;
     color: black;
 }
 
 .topnav a.active {
-    background-color: #ff00ff;
+    background-color: #FCBF49;
 }
 
 .topnav .icon {
@@ -57,4 +60,8 @@ body{
     font-size: 13px;
     color: brown;
     font-weight: lighter;
+}
+
+.calcSection {
+    text-align: center;
 }
