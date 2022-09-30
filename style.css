@@ -62,6 +62,27 @@ body{
     font-weight: lighter;
 }
 
+.calcPageContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .calcSection {
+    text-align: center;
+    width: 70%;
+}
+
+.top5 {
+    width: 30%;
+    background-color: #FCBF49;
+}
+
+@media only screen and (max-width: 600px) {
+    .calcSection {width: 100%}
+    .top5 {width: 100%}
+}
+
+#revHeader {
+    background-color: #BF3100;
     text-align: center;
 }

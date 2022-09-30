@@ -26,10 +26,25 @@ calcButton.addEventListener('click', function () {
             priceForMGram = (priceNumb / amountNumb).toFixed(2);
 
             mainTag.innerHTML = `
-                Yhden gramman hinta:
+                Yhden miligramman hinta:
                 <br>
                 ${priceForMGram} €
             `;
         }
     }
 })
+
+let text = `Tähän tulee teksti`;
+let htmlText = ``;
+let asideContent = document.getElementById('cheapestList');
+let pic = `TÄHÄN TULEE KUVA
+            <br>
+            ^______________^ <br><br>`
+
+for (let i = 0; i < 5; i++) {
+    htmlText += ` ${text} <br> 
+                ${pic}`;
+}
+
+asideContent.innerHTML = htmlText;
+

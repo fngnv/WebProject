@@ -7,28 +7,37 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-  <header class="topnav" id="mainNav">
+  <nav class="topnav" id="mainNav">
     <a  class="icon" id="iconID"  ><i class="fa fa-bars"></i></a>
     <a href="home.html">PÄÄSIVU</a>
-    <a href="#review">JUOMIEN ARVOSTELUJA</a>
+    <a href="reviews.html">JUOMIEN ARVOSTELUJA</a>
     <a class="active" href="calculator.html">KOFEIINILASKURI</a>
-    <a href="#map">KARTTA</a>
-  </header>
+    <a href="map.html">KARTTA</a>
+  </nav>
 
-  <section class="calcSection">
-      <p>Kofeiinimäärä milligrammoina</p>
-      <input id="gram" type="number">
-      <br>
-      <p>Hinta euroina</p>
-      <input id="price" type="number">
-      <p class="errorMessage" id="error"></p>
-      <br>
-          <button class="buttonClass" id="calculate">Lähetä</button>
-    <br><br>
-    <main>
+  <div class="calcPageContainer">
+      <section class="calcSection">
+          <h1>Laske lempijuomasi hinta per mg kofeiinia täältä!</h1>
+          <p>Kofeiinimäärä milligrammoina</p>
+          <input id="gram" type="number" step="any">
+          <br>
+          <p>Hinta euroina</p>
+          <input id="price" type="number" step="any">
+          <p class="errorMessage" id="error"></p>
+          <br>
+              <button class="buttonClass" id="calculate">Lähetä</button>
+        <br><br>
+        <main>
 
-    </main>
-  </section>
+        </main>
+      </section>
+
+      <aside class="top5">
+          <h1>Halvimmat energia-juomat</h1>
+          <h2>Top-5</h2>
+          <div id="cheapestList"></div>
+      </aside>
+  </div>
 
   <script src="scripts/menu.js"></script>
   <script src="scripts/calculator.js"></script>
