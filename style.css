@@ -86,3 +86,29 @@ body{
     background-color: #BF3100;
     text-align: center;
 }
+
+#weatherInputField {
+    text-align: center;
+}
+
+input[type="text"] {
+    height: 50px;
+    width: 400px;
+    background: #e7e7e7;
+    font-size: 20px;
+    border: none;
+    border-radius: 2px;
+}
+
+input[type="submit"] {
+    height: 50px;
+    width: 100px;
+    background: #e7e7e7;
+    font-size: 20px;
+    border: none;
+    border-radius: 2px;
+}
+
+#weatherOutput {
+    text-align: center;
+}

@@ -15,6 +15,21 @@
     <a href="map.html">Kartta</a>
   </nav>
 
+  <header id="weather">
+      <h2>Katso kaupungisi sääennuste täältä!</h2>
+       <div id="weatherInputField">
+           <input type="text" id="cityInput">
+           <input type="submit" id="showWeather" value="Hae">
+       </div>
+
+      <div id="weatherOutput">
+          <h1 id="cityName"></h1>
+          <p id="temp"></p>
+          <p id="desc"></p>
+      </div>
+  </header>
+
   <script src="scripts/menu.js"></script>
+  <script src="scripts/api.js"></script>
 </body>
 </html>
