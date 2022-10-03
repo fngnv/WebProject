@@ -112,3 +112,24 @@ input[type="submit"] {
 #weatherOutput {
     text-align: center;
 }
+
+.arvosteluLista ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+}
+
+.arvosteluLista figure {
+    position: relative;
+    margin: 20px;
+}
+
+.arvosteluLista figcaption {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(255,255,255, 0.5);
+    padding-left: 20px;
+}
