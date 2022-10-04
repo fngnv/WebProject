@@ -97,7 +97,7 @@ input[type="text"] {
     background: #e7e7e7;
     font-size: 20px;
     border: none;
-    border-radius: 2px;
+    border-radius: 5px;
 }
 
 input[type="submit"] {
@@ -132,4 +132,21 @@ input[type="submit"] {
     left: 0;
     background-color: rgba(255,255,255, 0.5);
     padding-left: 20px;
+}
+
+#comment-box {
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+}
+#comment-button {
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    height: 50px;
+    width: 100px;
+}
+
+#comment-button:hover{
+    background-color: #646464;
 }
