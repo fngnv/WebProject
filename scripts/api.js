@@ -15,7 +15,7 @@ showButton.addEventListener('click', function () {
             let description = data['weather'][0]['description'];
 
             cityNameOutput.innerHTML = name;
-            tempOutput.innerHTML = temperature;
+            tempOutput.innerHTML = temperature + "° C";
             descOutput.innerHTML = description;
         })
 

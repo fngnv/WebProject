@@ -1,5 +1,5 @@
 body{
-    font-family: "Comic Sans MS";
+    font-family: 'Poppins', sans-serif;
     margin: 0;
 }
 
@@ -111,6 +111,7 @@ input[type="submit"] {
 
 #weatherOutput {
     text-align: center;
+    font-family: 'Poppins', sans-serif;
 }
 
 .arvosteluLista ul {
@@ -150,3 +151,43 @@ input[type="submit"] {
 #comment-button:hover{
     background-color: #646464;
 }
+
+.headerText {
+    text-align: center;
+    margin: 25px;
+}
+
+.headerText p {
+    font-size: 18px;
+    width: 65%;
+    margin: 20px auto;
+    line-height: 1.88em;
+}
+
+.headerText h1 {
+    font-size: 40px;
+    width: 80%;
+    position: relative;
+    margin: 20px auto;
+    font-weight: 900;
+}
+
+.headerText span {
+    background: #d22424;
+    height: 2px;
+    width: 70px;
+    display: block;
+    margin: 0 auto;
+}
+
+/*
+#bgImage {
+    background-image: url("images/beautiful-shot-active-volcano-with-flowing-lava-smoke-clear-sky.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: block;
+    width: 100%;
+    height: 90%;
+    padding-top: 0;
+    padding-bottom: 100px;
+}*/
