@@ -6,6 +6,7 @@
       <link rel="stylesheet" href="style.css">
       <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="scripts/jquery-3.6.0.min.js"></script>
   </head>
   <body>
     <nav class="topnav" id="mainNav">
@@ -21,10 +22,13 @@
 
     <h3>Kommentointi</h3>
 
-    <input type="text" id="comment-box" placeholder="Kirjoita kommentti...">
-    <button id="comment-button">Lähetä</button>
-    <ul id="unordered">
-    </ul>
+    <div id="kommentointi-kentta">
+        <form id="kommentointi">
+            <input type="text" id="kirjoita-tahan" placeholder="Kirjoita kommentti...">
+            <button id="kommentointi-nappi">Lähetä</button>
+        </form>
+        <ul id="kommentit" class="kommentit"></ul>
+    </div>
 
     <script src="scripts/comment.js"></script>
     <script src="scripts/menu.js"></script>

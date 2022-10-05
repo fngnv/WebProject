@@ -98,6 +98,7 @@ input[type="text"] {
     font-size: 20px;
     border: none;
     border-radius: 5px;
+    margin: 5px;
 }
 
 input[type="submit"] {
@@ -115,15 +116,16 @@ input[type="submit"] {
 }
 
 .arvosteluLista ul {
-        list-style: none;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 .arvosteluLista figure {
     position: relative;
     margin: 20px;
+    border-radius: 50%;
 }
 
 .arvosteluLista figcaption {
@@ -135,21 +137,8 @@ input[type="submit"] {
     padding-left: 20px;
 }
 
-#comment-box {
-    border: none;
-    border-radius: 5px;
-    font-size: 20px;
-}
-#comment-button {
-    border: none;
-    border-radius: 5px;
-    font-size: 20px;
-    height: 50px;
-    width: 100px;
-}
-
-#comment-button:hover{
-    background-color: #646464;
+.reviewImg {
+    border-radius: 15%;
 }
 
 .headerText {
@@ -191,3 +180,28 @@ input[type="submit"] {
     padding-top: 0;
     padding-bottom: 100px;
 }*/
+
+#kommentointi-kentta {
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+}
+#kommentointi-nappi {
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    height: 50px;
+    width: 100px;
+}
+
+#kommentointi-nappi:hover{
+    background-color: #646464;
+}
+
+#kommentit li {
+    list-style: none;
+    margin: 20px;
+    padding-left: 10px;
+    border-left: coral;
+    border-left-style: dashed;
+}
