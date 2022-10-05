@@ -208,7 +208,8 @@ input[type="submit"] {
 
 footer {
     display: flex;
-    background-color: coral;
+    background-color: #bf3100;
+    color: #e7e7e7;
     padding-top: 20px;
     padding-bottom: 20px;
 }
