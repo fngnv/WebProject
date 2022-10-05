@@ -205,3 +205,29 @@ input[type="submit"] {
     border-left: coral;
     border-left-style: dashed;
 }
+
+footer {
+    display: flex;
+    background-color: coral;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.foo-left{
+    width: 33.3%;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.foo-right{
+    width: 33.3%;
+    text-align: right;
+    margin-right: 20px;
+}
+
+.foo-center{
+    width: 33.4%;
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 20px;
+}
