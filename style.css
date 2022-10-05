@@ -232,3 +232,23 @@ footer {
     margin-left: 20px;
     margin-right: 20px;
 }
+
+@media only screen and (max-width: 600px) {
+    footer {
+        display: block;
+    }
+    .foo-left {
+        text-align: center;
+        width: 100%;
+        padding-bottom: 20px;
+    }
+    .foo-center {
+        text-align: center;
+        width: 100%;
+        padding-bottom: 20px;
+    }
+    .foo-right {
+        text-align: center;
+        width: 100%;
+    }
+}
