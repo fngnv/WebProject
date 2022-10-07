@@ -33,7 +33,7 @@ calcButton.addEventListener('click', function () {
     }
 })
 
-let text = `Tähän tulee teksti`;
+/*let text = `Tähän tulee teksti`;
 let htmlText = ``;
 let asideContent = document.getElementById('cheapestList');
 let pic = `TÄHÄN TULEE KUVA
@@ -45,5 +45,5 @@ for (let i = 0; i < 5; i++) {
                 ${pic}`;
 }
 
-asideContent.innerHTML = htmlText;
+asideContent.innerHTML = htmlText;*/
 
