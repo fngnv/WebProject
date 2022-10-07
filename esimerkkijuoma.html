@@ -4,19 +4,20 @@
       <meta charset="UTF-8">
       <title>Energyneer</title>
       <link rel="stylesheet" href="style.css">
-      <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <script src="scripts/jquery-3.6.0.min.js"></script>
   </head>
   <body>
-    <nav class="topnav" id="mainNav">
+  <nav class="topnav" id="mainNav">
       <a class="icon" id="iconID"  ><i class="fa fa-bars"></i></a>
       <a href="home.html">Etusivu</a>
       <a href="reviews.html">Juoma-arvostelut</a>
       <a href="calculator.html">Kofeiinilaskuri</a>
       <a href="map.html">Kartta</a>
-    </nav>
+  </nav>
 
+  <section class="drinkReviewSection">
     <h2>Juoman nimi</h2>
     <p>arvostelu jonnekin tänne</p>
 
@@ -24,11 +25,12 @@
 
     <div id="kommentointi-kentta">
         <form id="kommentointi">
-            <input type="text" id="kirjoita-tahan" placeholder="Kirjoita kommentti...">
-            <button id="kommentointi-nappi">Lähetä</button>
+            <input type="text" class="keyboardInputClass" id="kirjoita-tahan" placeholder="Kirjoita kommentti...">
+            <button class="buttonClass" id="kommentointi-nappi">Lähetä</button>
         </form>
         <ul id="kommentit" class="kommentit"></ul>
     </div>
+  </section>
 
 
     <footer>
