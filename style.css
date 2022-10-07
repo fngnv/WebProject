@@ -29,12 +29,14 @@ body{
     font-size: 15px;
 }
 
-.topnav a:hover {
-    background-color: #fbff12;
-    color: #363537;
-}
+
 
 .topnav a.active {
+    color: #ffffff;
+}
+
+.topnav a:hover {
+    background-color: #fbff12;
     color: #363537;
 }
 
@@ -90,8 +92,8 @@ body{
 
 .top5 {
     width: 30%;
-    background-color: #363537;
-    color: #e7e7e7;
+    background-color: #fbff12;
+    color: #363537;
 }
 
 #weather {
@@ -144,11 +146,6 @@ body{
 
 .calcSection input {
     width: 100px;
-}
-
-.top5 {
-    width: 30%;
-    background-color: #FCBF49;
 }
 
 @media only screen and (max-width: 600px) {
