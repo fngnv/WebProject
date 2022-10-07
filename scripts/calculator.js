@@ -12,9 +12,8 @@ const mainTag = document.querySelector('main');
 let priceForMGram;
 
 calcButton.addEventListener('click', function () {
-    let errorMsg = document.getElementById('error');
     console.log("TYT");
-    if(amountInput.value == "" || priceInput.value == "") {
+    if(amountInput.value === "" || priceInput.value === "") {
         //errorMsg.innerText = 'Täytä kaikki kentät!'
         alert('Täytä kaikki kentät!');
     } else {
@@ -34,7 +33,7 @@ calcButton.addEventListener('click', function () {
     }
 })
 
-let text = `Tähän tulee teksti`;
+/*let text = `Tähän tulee teksti`;
 let htmlText = ``;
 let asideContent = document.getElementById('cheapestList');
 let pic = `TÄHÄN TULEE KUVA
@@ -46,5 +45,5 @@ for (let i = 0; i < 5; i++) {
                 ${pic}`;
 }
 
-asideContent.innerHTML = htmlText;
+asideContent.innerHTML = htmlText;*/
 

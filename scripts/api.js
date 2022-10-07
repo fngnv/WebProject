@@ -1,7 +1,7 @@
 const showButton = document.getElementById('showWeather');
 const cityNameInput = document.getElementById('cityInput');
 const cityNameOutput = document.getElementById('cityName');
-const outputDiv = document.getElementById('weatherOutput');
+//const outputDiv = document.getElementById('weatherOutput');
 const descOutput = document.getElementById('desc');
 const tempOutput = document.getElementById('temp');
 
