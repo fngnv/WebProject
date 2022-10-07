@@ -1,18 +1,21 @@
 body{
-    font-family: 'Poppins', sans-serif;
+    font-family: Arial;
     margin: 0;
 }
 
+
+
 .topnav {
     overflow: hidden;
-    background-color: #BF3100;
+    background-color: #b084cc;
 }
 
 .topnav a {
     float: left;
     display: block;
-    background-color: #FCBF49;
-    color: black;
+    font-family: 'Anonymous Pro', monospace;
+    background-color: #363537;
+    color: #ffffff;
     text-align: center;
     padding: 14px 16px;
     margin: 10px;
@@ -22,12 +25,13 @@ body{
 }
 
 .topnav a:hover {
-    background-color: #FDC85E;
-    color: black;
+    background-color: #fbff12;
+    color: #363537;
 }
 
 .topnav a.active {
-    background-color: #FCBF49;
+    background-color: #b084cc;
+    color: #363537;
 }
 
 .topnav .icon {
@@ -58,7 +62,7 @@ body{
 
 .errorMessage {
     font-size: 13px;
-    color: brown;
+    color: #b084cc;
     font-weight: lighter;
 }
 
@@ -74,7 +78,8 @@ body{
 
 .top5 {
     width: 30%;
-    background-color: #FCBF49;
+    background-color: #363537;
+    color: #e7e7e7;
 }
 
 @media only screen and (max-width: 600px) {
@@ -83,7 +88,7 @@ body{
 }
 
 #revHeader {
-    background-color: #BF3100;
+    background-color: #b084cc;
     text-align: center;
 }
 
@@ -112,7 +117,7 @@ input[type="submit"] {
 
 #weatherOutput {
     text-align: center;
-    font-family: 'Poppins', sans-serif;
+    font-family: Arial;
 }
 
 .arvosteluLista ul {
@@ -162,7 +167,7 @@ input[type="submit"] {
 }
 
 .headerText span {
-    background: #d22424;
+    background: #b084cc;
     height: 2px;
     width: 70px;
     display: block;
@@ -208,7 +213,7 @@ input[type="submit"] {
 
 footer {
     display: flex;
-    background-color: #bf3100;
+    background-color: #b084cc;
     color: #e7e7e7;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -251,4 +256,8 @@ footer {
         text-align: center;
         width: 100%;
     }
+}
+
+h1, h2, h3 {
+    font-family: 'Anonymous Pro', monospace;
 }
