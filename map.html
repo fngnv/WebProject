@@ -19,27 +19,29 @@
 <nav class="topnav" id="mainNav">
     <img class="logo" src="images/energyneer_logo.png">
     <a class="icon" id="iconID"  ><i class="fa fa-bars"></i></a>
-    <a class="active" href="home.html">Etusivu</a>
+    <a href="home.html">Etusivu</a>
     <a href="reviews.html">Juoma-arvostelut</a>
     <a href="calculator.html">Hauska sivu</a>
-    <a href="map.html">Kartta</a>
+    <a class="active" href="map.html">Kartta</a>
 </nav>
 
   <section id="map">
     <h1>Pääkaupunkiseudun parhaimmat valikoimat energiajuomia</h1>
 
     <div id="googleMap"></div>
+    <div id="buttContainer">
     <button id="walkButton" class="buttonClass">Kävely</button>
     <button id="cycleButton" class="buttonClass">Pyöräily</button>
     <button id="driveButton" class="buttonClass">Autolla</button>
+    </div>
 
-    <main>
+      <main>
     <!-- matka ja aika -->
     </main>
   </section>
 
     <section id="weather">
-        <h2>Ennen kuin lähdet energiajuomien ostoksilla tarkista kaupungisi sääennuste täältä!</h2>
+        <h2>Ennen kuin lähdet energiajuomien ostoksilla tarkista kaupungisi sääennuste täältä</h2>
         <div id="weatherInputField">
             <input type="text" class="keyboardInputClass" id="cityInput">
             <input type="submit" class="buttonClass" id="showWeather" value="Hae">

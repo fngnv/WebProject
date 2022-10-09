@@ -144,10 +144,6 @@ body{
     margin: 30px auto 30px auto;
 }
 
-#weatherInputField {
-    text-align: center;
-}
-
 .keyboardInputClass {
     height: 50px;
     width: 400px;
@@ -182,9 +178,9 @@ body{
     .top5 {width: 100%}
 }
 
-#weatherOutput {
-    text-align: center;
-    font-family: 'Open Sans', sans-serif;
+#weather {
+    width: 80%;
+    margin: 40px auto;
 }
 
 .arvosteluLista ul {
@@ -325,8 +321,18 @@ h1, h2, h3 {
     font-family: 'Anonymous Pro', monospace;
 }
 
+#map h1 {
+    width: 80%;
+    margin: auto;
+}
+
+#buttContainer {
+    width: 80%;
+    margin: auto;
+}
+
 #googleMap {
     width:80%;
     height:600px;
-    margin: auto;
+    margin: 40px auto;
 }
