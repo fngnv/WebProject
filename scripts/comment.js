@@ -20,13 +20,18 @@ function appendToStream(stream, str, index) {
     stream.appendChild(li);
 }
 
-function loadComments(stream) {
+function lataaKommentit(stream) {
     var comments = haeKommentit();
     if (comments) {
         for (var i = 0; i < comments.length; i++) {
             appendToStream(stream, comments[i], i);
         }
     }
+}
+
+function tyhjennaKommentit(stream) {
+    localStorage.removeItem('comments');
+    stream.innerHTML = '';
 }
 
 supportsLocalStorage(); {
@@ -37,8 +42,9 @@ function initApp() {
     var commentForm = document.getElementById('kommentointi'),
         commentList = document.getElementById('kommentit'),
         commentInput = document.getElementById('kirjoita-tahan')
+        poista = document.getElementById('poista');
 
-    loadComments(commentList);
+    lataaKommentit(commentList);
 
     commentForm.addEventListener('submit', function (event) {
         event.preventDefault();
@@ -49,11 +55,14 @@ function initApp() {
             if (err) {
                 return;
             }
-
             comments.push(value);
             localStorage.setItem('comments', JSON.stringify(comments));
             appendToStream(commentList, commStr);
             commentInput.value = '';
         });
+    }, true);
+
+    poista.addEventListener('click', function() {
+        tyhjennaKommentit(commentList);
     }, true);
 }

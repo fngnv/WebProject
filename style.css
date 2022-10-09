@@ -31,7 +31,7 @@ body{
 
 .topnav a.active {
     color: #363537;
-    background-color: #e7e7e7;
+    background-color: #ffffff;
 }
 
 .topnav a:hover {
@@ -193,7 +193,6 @@ body{
 .arvosteluLista figure {
     position: relative;
     margin: 20px;
-    border-radius: 50%;
 }
 
 .arvosteluLista figcaption {
@@ -201,12 +200,12 @@ body{
     top: 0;
     right: 0;
     left: 0;
-    background-color: rgba(255,255,255, 0.5);
+    background-color: rgb(255, 255, 255);
     padding-left: 20px;
 }
 
 .reviewImg {
-    border-radius: 15%;
+    border-radius: 7%;
 }
 
 .headerText {
@@ -256,14 +255,30 @@ body{
 }
 #kommentointi-nappi {
     border: none;
-    border-radius: 5px;
     font-size: 20px;
     height: 50px;
     width: 100px;
+    background-color: #b084cc;
+    color: white;
 }
 
 #kommentointi-nappi:hover{
-    background-color: #646464;
+    background-color: #fbff12;
+    color: #363537;
+}
+
+#poista {
+    border: none;
+    font-size: 20px;
+    height: 75px;
+    width: 120px;
+    background-color: #b084cc;
+    color: white;
+}
+
+#poista:hover{
+    background-color: #fbff12;
+    color: #363537;
 }
 
 #kommentit li {
@@ -301,12 +316,12 @@ footer {
     footer {
         display: block;
     }
-    #foo-left {
+    #foo-center {
         text-align: center;
         width: 100%;
         padding-bottom: 20px;
     }
-    #foo-center {
+    #foo-left {
         text-align: center;
         width: 100%;
         padding-bottom: 20px;
@@ -319,6 +334,7 @@ footer {
 
 h1, h2, h3 {
     font-family: 'Anonymous Pro', monospace;
+    text-align: center;
 }
 
 #map h1 {
