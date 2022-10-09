@@ -126,6 +126,12 @@ body{
     text-align: center;
 }
 
+#directions-map {
+    height: 500px;
+    width: 80%;
+    margin: 30px auto 30px auto;
+}
+
 #weatherInputField {
     text-align: center;
 }
@@ -310,4 +316,10 @@ footer {
 
 h1, h2, h3 {
     font-family: 'Anonymous Pro', monospace;
+}
+
+#googleMap {
+    width:80%;
+    height:600px;
+    margin: auto;
 }

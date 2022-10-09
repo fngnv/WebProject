@@ -13,6 +13,7 @@
             jQuery("#footer").load("footer.html");
         });
     </script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjIKTr2Os4ZBKILhrSAyVL94GVaXTparg&callback=getLocation"></script>
 </head>
 <body>
 <nav class="topnav" id="mainNav">
@@ -38,9 +39,23 @@
       </div>
   </section>
 
+  <section id="map">
+    <h2>Pääkaupunkiseudun parhaimmat valikoimat</h2>
+
+    <div id="googleMap"></div>
+    <button id="walkButton">Kävely</button>
+    <button id="cycleButton">Pyöräily</button>
+    <button id="driveButton">Autolla</button>
+
+    <main>
+    <!-- matka ja aika -->
+    </main>
+  </section>
+
 
   <footer id="footer"></footer>
   <script src="scripts/menu.js"></script>
   <script src="scripts/api.js"></script>
+  <script src="scripts/map.js"></script>
 </body>
 </html>
