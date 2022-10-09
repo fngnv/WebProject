@@ -195,7 +195,7 @@ function geoSuccess(position) {
             }
             //get distance results
             function callback(response, status) {
-                if (status != google.maps.DistanceMatrixStatus.OK) {
+                if (status !== google.maps.DistanceMatrixStatus.OK) {
                     $('#result').html(err);
                 }
                 else {
@@ -212,10 +212,10 @@ function geoSuccess(position) {
                         $('#in_kilo').text(distance_in_kilo.toFixed(2));
                         $('#duration_text').text(duration_text);
                         let html = `
-                        <p></p>
-                        <p></p>
+                        <p>Matkan pituus: ${distance_in_kilo} km</p>
+                        <p>Matkan kesto: ${duration_text}</p>
                         `;
-                        mainElem.innerHTML += html;
+                        mainElem.innerHTML = html;
                     }
                 }
             }

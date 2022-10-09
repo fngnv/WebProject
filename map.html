@@ -25,33 +25,32 @@
     <a href="map.html">Kartta</a>
 </nav>
 
-  <section id="weather">
-      <h2>Katso kaupungisi sääennuste täältä!</h2>
-       <div id="weatherInputField">
-           <input type="text" class="keyboardInputClass" id="cityInput">
-           <input type="submit" class="buttonClass" id="showWeather" value="Hae">
-       </div>
-
-      <div id="weatherOutput">
-          <h1 id="cityName"></h1>
-          <p id="temp"></p>
-          <p id="desc"></p>
-      </div>
-  </section>
-
   <section id="map">
-    <h2>Pääkaupunkiseudun parhaimmat valikoimat</h2>
+    <h1>Pääkaupunkiseudun parhaimmat valikoimat energiajuomia</h1>
 
     <div id="googleMap"></div>
-    <button id="walkButton">Kävely</button>
-    <button id="cycleButton">Pyöräily</button>
-    <button id="driveButton">Autolla</button>
+    <button id="walkButton" class="buttonClass">Kävely</button>
+    <button id="cycleButton" class="buttonClass">Pyöräily</button>
+    <button id="driveButton" class="buttonClass">Autolla</button>
 
     <main>
     <!-- matka ja aika -->
     </main>
   </section>
 
+    <section id="weather">
+        <h2>Ennen kuin lähdet energiajuomien ostoksilla tarkista kaupungisi sääennuste täältä!</h2>
+        <div id="weatherInputField">
+            <input type="text" class="keyboardInputClass" id="cityInput">
+            <input type="submit" class="buttonClass" id="showWeather" value="Hae">
+        </div>
+
+        <div id="weatherOutput">
+            <h1 id="cityName"></h1>
+            <p id="temp"></p>
+            <p id="desc"></p>
+        </div>
+    </section>
 
   <footer id="footer"></footer>
   <script src="scripts/menu.js"></script>
