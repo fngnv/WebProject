@@ -79,10 +79,19 @@ body{
     flex-wrap: wrap;
 }
 
-.calcSection {
+#calculatorsAndStuff {
     text-align: center;
     width: 70%;
 }
+
+#recipe {
+    text-align: left;
+}
+
+#recipe ul {
+    line-height: 1.6;
+}
+
 
 .drinkReviewSection {
     margin-top: 6vh;
@@ -95,7 +104,7 @@ body{
     text-align: center;
 }
 
-.cheapestListItem {
+.cheapestListItem:not(:first-child) {
     margin: 4em 0;
 }
 
@@ -152,11 +161,6 @@ body{
     display: flex;
     flex-wrap: wrap;
     margin-top: 6vh;
-}
-
-.calcSection {
-    text-align: center;
-    width: 70%;
 }
 
 .calcSection input {
@@ -270,6 +274,7 @@ footer {
     background-color: #b084cc;
     color: #ffffff;
     padding: 20px;
+    bottom: 0;
 }
 
 #foo-left{

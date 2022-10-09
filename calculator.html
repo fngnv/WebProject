@@ -19,26 +19,59 @@
         <a class="icon" id="iconID"  ><i class="fa fa-bars"></i></a>
         <a href="home.html">Etusivu</a>
         <a href="reviews.html">Juoma-arvostelut</a>
-        <a class="active" href="calculator.html">Kofeiinilaskuri</a>
+        <a class="active" href="calculator.html">Hauska sivu</a>
         <a href="map.html">Kartta</a>
     </nav>
 
   <div class="calcPageContainer">
+      <div id="calculatorsAndStuff">
       <section class="calcSection">
-          <h1>Laske lempijuomasi hinta per mg kofeiinia täältä!</h1>
+          <h1>Laske lempijuomasi hinta per mg kofeiinia</h1>
           <p>Kofeiinimäärä milligrammoina</p>
-          <input id="gram" class="keyboardInputClass" type="number" step="any">
+          <input id="gram1" class="keyboardInputClass" type="number" step="any">
           <br>
           <p>Hinta euroina</p>
-          <input id="price" class="keyboardInputClass" type="number" step="any">
-          <p class="errorMessage" id="error"></p>
+          <input id="price1" class="keyboardInputClass" type="number" step="any">
           <br>
-              <button class="buttonClass" id="calculate">Lähetä</button>
+              <button class="buttonClass" id="calculate1">Lähetä</button>
         <br><br>
-        <main>
-
-        </main>
+          <div id="result1"></div>
       </section>
+      <section class="calcSection">
+          <h1>Laske mikä annos kofeiinia voisi tappaa sinut</h1>
+          <p>Painosi kilogrammoina</p>
+          <input id="kg2" class="keyboardInputClass" type="number" step="any">
+          <br>
+          <button class="buttonClass" id="calculate2">Lähetä</button>
+          <br><br>
+          <div id="result2"></div>
+      </section>
+      <article id="recipe">
+          <h1>Reseptivinkki: The Loch Ness Monster cocktail</h1>
+          <h3><bold>Ainekset</bold></h3>
+          <ul>
+              <li><i>30 ml</i> Southern Comfort Black Label -persikkasnapsia</li>
+              <li><i>30 ml</i> Captain Morgan Spiced -rommia</li>
+              <li><i>30 ml</i> Jose Cuervo Gold -tequilaa</li>
+              <li><i>30 ml</i> amaretto-likööriä</li>
+              <li><i>30 ml</i> vodkaa</li>
+              <li><i>30 ml</i> giniä</li>
+              <li><i>30 ml</i> vaaleaa rommia</li>
+              <li><i>30 ml</i> Chambord -vadelmalikööriä</li>
+              <li><i>30 ml</i> Midori -melonilikööriä</li>
+              <li><i>30 ml</i> Blue Curacao -likööriä</li>
+              <li><i>30 ml</i> Malibu -kookosrommia</li>
+              <li><i>Tölkki (500 ml)</i> Monster -energiajuomaa</li>
+          </ul>
+          <h3>Valmistumisohje</h3>
+          <ol>
+              <li>Sekoita ainekset</li>
+              <li>Nauti!</li>
+          </ol>
+          <p></p>
+      </article>
+      </div>
+
 
       <aside class="top5">
           <h1>Halvimmat energia-juomat</h1>
