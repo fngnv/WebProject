@@ -1,15 +1,20 @@
+/*
+*
+* Tekijä: Silja
+* 10.10.2022
+* */
 let myLatLng;
 let latit;
-let longit
-const mainElem = document.querySelector('main');
+let longit;
 const walkButton = document.getElementById("walkButton");
 const cycleButton = document.getElementById("cycleButton");
 const driveButton = document.getElementById("driveButton");
 
+//get users current position
 if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+    navigator.geolocation.getCurrentPosition(geoSuccess, geoError); //starts one of the functions depending if it gets users current location or not
 } else {
-    alert("Geolocation is not supported by this browser.");
+    alert("Geolocation is not supported by this browser."); //if the browser doesn't support geolocation
 }
 //if get current position doesn't work user get error alert
 function geoError() {
@@ -17,22 +22,22 @@ function geoError() {
 }
 //when get current position works
 function geoSuccess(position) {
-    //gets user's position latitude and longitude
+    //get user's position latitude and longitude
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude;
 
-    //user's position
+    //user's location
     myLatLng = {
         lat: latitude,
         lng: longitude
     };
 
+    //set how the map is shown
     let mapProp = {
-        //center: new google.maps.LatLng(latitude, longitude), // puts your current location at the centre of the map
         zoom: 11,
         mapTypeId: 'roadmap',
     };
-
+    //shows the map with given settings
     let map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 
     let directionsService = new google.maps.DirectionsService;
@@ -42,7 +47,7 @@ function geoSuccess(position) {
     directionsDisplay.setMap(map);
 
     let bounds = new google.maps.LatLngBounds();
-
+    //sets the markers to the map
     let markers = [
         ['', 60.217821, 24.810242],
         ['', 60.163547, 24.910032],
@@ -57,7 +62,7 @@ function geoSuccess(position) {
         ['Sijaintisi', latitude, longitude]
     ];
 
-    // Info Window Content
+    //info window content for the markers
     let infoWindowContent = [
         ['<div class="info_content">' +
         '<h3>K-Citymarket Espoo Sello</h3>' +
@@ -115,7 +120,7 @@ function geoSuccess(position) {
     let infoWindow = new google.maps.InfoWindow(),
         marker, i;
 
-    // Loop through our array of markers & place each one on the map
+    //loop through our array of markers & place each one on the map
     for (i = 0; i < markers.length; i++) {
         let position = new google.maps.LatLng(markers[i][1], markers[i][2]);
         bounds.extend(position);
@@ -136,28 +141,27 @@ function geoSuccess(position) {
             }
         })(marker, i));
 
+        //when the button is pressed map shows route from users location to destination by driving
         driveButton.addEventListener('click', function () {
             directionsService.route({
-                origin: myLatLng,
-
-                // destination: marker.getPosition(),
-                destination: {
+                origin: myLatLng,   // the start point for the route from users location
+                destination: {  //destination coords of the route which is chosen by user from the markers
                     lat: latit,
                     lng: longit
                 },
                 travelMode: 'DRIVING'
+                //shows the response for route
             }, function (response, status) {
                 if (status === 'OK') {
-                    directionsDisplay.setDirections(response);
+                    directionsDisplay.setDirections(response);  //shows the route if there is possible one
                 }
             });
         });
 
+        //when the button is pressed map shows route from users location to destination by walking
         walkButton.addEventListener('click', function () {
             directionsService.route({
                 origin: myLatLng,
-
-                // destination: marker.getPosition(),
                 destination: {
                     lat: latit,
                     lng: longit
@@ -170,13 +174,10 @@ function geoSuccess(position) {
             });
         });
 
-
+        //when the button is pressed map shows route from users location to destination by bicycling
         cycleButton.addEventListener('click', function () {
-            //calculateDistance();
             directionsService.route({
                 origin: myLatLng,
-
-                // destination: marker.getPosition(),
                 destination: {
                     lat: latit,
                     lng: longit
@@ -190,13 +191,7 @@ function geoSuccess(position) {
         });
 
 
-
-
-
-
-
         $(function () {
-            // add input listeners
             google.maps.event.addDomListener(window, "load", function () {
                 var origin = new google.maps.places.Autocomplete(
                     origin = myLatLng
@@ -208,12 +203,10 @@ function geoSuccess(position) {
                     }
                 );
 
-
-
-                // calculate distance
+                // calculate walking distance when user chooses walking
                 walkButton.addEventListener('click', function () {
-                    origin = myLatLng;
-                    destination = {
+                    origin = myLatLng;  // the start point for the route from users location
+                    destination = {     //destination coords of the route which is chosen by user from the markers
                         lat: latit,
                         lng: longit
                     };
@@ -222,16 +215,16 @@ function geoSuccess(position) {
                         {
                             origins: [origin],
                             destinations: [destination],
-                            travelMode: google.maps.TravelMode.WALKING,
+                            travelMode: google.maps.TravelMode.WALKING, //by walking
                             unitSystem: google.maps.UnitSystem.metric, // kilometers and meters.
                             avoidHighways: false,
                             avoidTolls: false,
                         },
-                        callback
+                        callback //start callback function
                     );
                 })
 
-                // calculate distance
+                // calculate distance when user chooses bicycling
                 cycleButton.addEventListener('click', function () {
                     origin = myLatLng;
                     destination = {
@@ -244,7 +237,7 @@ function geoSuccess(position) {
                             origins: [origin],
                             destinations: [destination],
                             travelMode: google.maps.TravelMode.BICYCLING,
-                            unitSystem: google.maps.UnitSystem.metric, // kilometers and meters.
+                            unitSystem: google.maps.UnitSystem.metric,
                             avoidHighways: false,
                             avoidTolls: false,
                         },
@@ -252,7 +245,7 @@ function geoSuccess(position) {
                     );
                 })
 
-                // calculate distance
+                // calculate distance when user chooses driving
                 driveButton.addEventListener('click', function () {
                     origin = myLatLng;
                     destination = {
@@ -265,7 +258,7 @@ function geoSuccess(position) {
                             origins: [origin],
                             destinations: [destination],
                             travelMode: google.maps.TravelMode.DRIVING,
-                            unitSystem: google.maps.UnitSystem.metric, // kilometers and meters.
+                            unitSystem: google.maps.UnitSystem.metric,
                             avoidHighways: false,
                             avoidTolls: false,
                         },
@@ -276,13 +269,13 @@ function geoSuccess(position) {
                 // get distance results
                 function callback(response, status) {
                     if (status !== google.maps.DistanceMatrixStatus.OK) {
-                        $("#result").html(err);
+                        $("#result").html(err); //gives error if calculating distance doesn't work
                     } else {
-                        var origin = response.originAddresses[0];
+                        let origin = response.originAddresses[0];
                         console.log(origin);
-                        var destination = response.destinationAddresses[0];
+                        let destination = response.destinationAddresses[0];
                         console.log(destination);
-                        if (response.rows[0].elements[0].status === "ZERO_RESULTS") {
+                        if (response.rows[0].elements[0].status === "ZERO_RESULTS") { //if there isn't possible routes between the points with given transit
                             $("#result").html(
                                 "Better get on a plane. There are no roads between " +
                                 origin +
@@ -290,29 +283,29 @@ function geoSuccess(position) {
                                 destination
                             );
                         } else {
-                            var distance = response.rows[0].elements[0].distance;
+                            let distance = response.rows[0].elements[0].distance;   //distance of the points
                             console.log(distance);
-                            var duration = response.rows[0].elements[0].duration;
+                            let duration = response.rows[0].elements[0].duration;   //duration between the points
                             console.log(duration);
                             console.log(response.rows[0].elements[0].distance);
-                            var distance_in_kilo = distance.value / 1000; // the kilom
+                            let distance_in_kilo = distance.value / 1000; //distance in km
                             console.log(distance_in_kilo);
-                            var duration_text = duration.text;
+                            let duration_text = duration.text;  //duration in hours and mins
                             $("#kilo").html(`Matka ${distance_in_kilo.toFixed(2)} km`);
                             $("#text").html(`Aika ${duration_text}`);
                         }
                     }
                 }
 
-                // print results on submit the form
+                //print results
                 $("#distance_form").submit(function (e) {
                     e.preventDefault();
                     calculateDistance();
                 })
             })
-                // Automatically center the map fitting all markers on the screen
-                map.fitBounds(bounds);
+            // Automatically center the map fitting all markers on the screen
+            map.fitBounds(bounds);
 
-            })
-        }
+        })
+    }
 }

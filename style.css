@@ -399,7 +399,7 @@ h1, h2, h3 {
 
 }
 #result {
-    margin: auto;
+    margin: 40px auto;
     text-align: center;
     font-family: 'Anonymous Pro', monospace;
 }
