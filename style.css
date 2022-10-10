@@ -135,8 +135,8 @@ body{
 }
 
 #map h1 {
-    font-size: 30px;
     margin: 20px;
+    font-size: 40px;
 }
 
 #directions-map {
@@ -342,6 +342,14 @@ footer {
     bottom: 0;
 }
 
+footer a{
+    color: #ffffff;
+}
+
+footer a:hover{
+    color: #fbff12;
+}
+
 #foo-left{
     width: 33.3%;
     text-align: left;
@@ -386,7 +394,7 @@ h1, h2, h3 {
 #map h1 {
     width: 80%;
     margin: auto;
-    text-align: left;
+    text-align: center;
 }
 
 #buttContainer {
@@ -440,6 +448,13 @@ h1, h2, h3 {
     background-color: #fbff12;
     color: #363537;
     text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .kuvakasis {
+        width: 100%;
+        height: auto;
+    }
 }
 
 /* Tällä on helppo testata missä menee rajat T. Kirsi
