@@ -100,6 +100,11 @@ body{
 
 .drinkReviewSection {
     margin-top: 6vh;
+    padding-left: 10px;
+    width: 100%;
+    margin-right: 15px;
+    font-size: 16px;
+    line-height: 1.88em;
 }
 
 .top5 {
@@ -197,6 +202,7 @@ body{
 
 .arvosteluLista figcaption {
     position: relative;
+    font-size: 18px;
     top: 0;
     right: 0;
     left: 0;
@@ -216,9 +222,9 @@ body{
 
 .headerText p {
     font-size: 18px;
+    line-height: 1.88em;
     width: 65%;
     margin: 20px auto;
-    line-height: 1.88em;
 }
 
 .headerText img {
@@ -250,7 +256,7 @@ body{
 
 #juomankuva {
     float: left;
-    margin: 3px 10px 3px 5px;
+    margin: 3px 15px 5px 5px;
 }
 
 #arvostelu {
@@ -261,12 +267,22 @@ body{
     text-align: right;
     font-style: italic;
     margin-right: 20px;
+    margin-bottom: 60px;
+}
+
+#kommentit-loota {
+    width: 100%;
+}
+
+#kommentit-otsikko {
+    text-align: left;
+    margin-left: 20px;
 }
 
 #kommentointi-kentta {
     border: none;
-    border-radius: 5px;
     font-size: 20px;
+    margin-left: 20px;
 }
 #kommentointi-nappi {
     border: none;
@@ -285,10 +301,11 @@ body{
 #poista {
     border: none;
     font-size: 20px;
-    height: 75px;
-    width: 120px;
+    height: 50px;
+    width: 170px;
     background-color: #935DB5;
     color: white;
+    margin: 5px;
 }
 
 #poista:hover{
@@ -299,7 +316,6 @@ body{
 #kommentit li {
     list-style: none;
     margin: 20px;
-    margin-left: 400px;
     padding-left: 10px;
     border-left: #935DB5;
     border-left-style: dashed;
