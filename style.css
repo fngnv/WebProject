@@ -5,7 +5,7 @@ body{
 
 .topnav {
     overflow: hidden;
-    background-color: #b084cc;
+    background-color: #935DB5;
     position: fixed;
     top: 0;
     width: 100%;
@@ -75,7 +75,7 @@ body{
 
 .errorMessage {
     font-size: 13px;
-    color: #b084cc;
+    color: #935DB5;
     font-weight: lighter;
 }
 
@@ -200,7 +200,7 @@ body{
     top: 0;
     right: 0;
     left: 0;
-    background-color: #b084cc;
+    background-color: #935DB5;
     color: #ffffff;
 }
 
@@ -241,7 +241,7 @@ body{
 }
 
 .headerText span {
-    background: #b084cc;
+    background: #935DB5;
     height: 2px;
     width: 70px;
     display: block;
@@ -273,7 +273,7 @@ body{
     font-size: 20px;
     height: 50px;
     width: 100px;
-    background-color: #b084cc;
+    background-color: #935DB5;
     color: white;
 }
 
@@ -287,7 +287,7 @@ body{
     font-size: 20px;
     height: 75px;
     width: 120px;
-    background-color: #b084cc;
+    background-color: #935DB5;
     color: white;
 }
 
@@ -301,13 +301,13 @@ body{
     margin: 20px;
     margin-left: 400px;
     padding-left: 10px;
-    border-left: #b084cc;
+    border-left: #935DB5;
     border-left-style: dashed;
 }
 
 footer {
     display: flex;
-    background-color: #b084cc;
+    background-color: #935DB5;
     color: #ffffff;
     padding: 20px;
     bottom: 0;
