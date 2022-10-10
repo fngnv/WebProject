@@ -352,3 +352,14 @@ h1, h2, h3 {
     height:600px;
     margin: 40px auto;
 }
+
+#distance_form {
+    text-align: center;
+    font-family: 'Anonymous Pro', monospace;
+
+}
+#result {
+    margin: auto;
+    text-align: center;
+    font-family: 'Anonymous Pro', monospace;
+}
