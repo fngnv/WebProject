@@ -397,6 +397,9 @@ h1, h2, h3 {
     font-family: 'Anonymous Pro', monospace;
 }
 
+
+/* Tällä on helppo testata missä menee rajat T. Kirsi
 *{
     outline: 1px solid red;
 }
+ */
