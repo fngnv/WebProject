@@ -1,35 +1,38 @@
+
 let myLatLng;
 let latit;
 let longit
 const mainElem = document.querySelector('main');
 const walkButton = document.getElementById("walkButton");
 const cycleButton = document.getElementById("cycleButton");
-const driveButton = document.getElementById("driveButton")
+const driveButton = document.getElementById("driveButton");
 
 if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
 } else {
     alert("Geolocation is not supported by this browser.");
 }
-
+//if get current position doesn't work user get error alert
 function geoError() {
     alert("Geocoder failed.");
 }
-
+//when get current position works
 function geoSuccess(position) {
+    //gets user's position latitude and longitude
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude;
 
+    //user's position
     myLatLng = {
         lat: latitude,
         lng: longitude
     };
 
     let mapProp = {
-        center: new google.maps.LatLng(latitude, longitude), // puts your current location at the centre of the map
         zoom: 11,
         mapTypeId: 'roadmap',
     };
+
     let map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 
     let directionsService = new google.maps.DirectionsService;
@@ -167,8 +170,8 @@ function geoSuccess(position) {
             });
         });
 
+
         cycleButton.addEventListener('click', function () {
-            calculateDistance();
             directionsService.route({
                 origin: myLatLng,
 
@@ -182,45 +185,133 @@ function geoSuccess(position) {
                 if (status === 'OK') {
                     directionsDisplay.setDirections(response);
                 }
-            })
-
-            function calculateDistance() {
-                let service = new google.maps.DistanceMatrixService();
-                service.getDistanceMatrix(
-                    {
-                        unitSystem: google.maps.UnitSystem.metric,
-                        avoidHighways: false,
-                        avoidTolls: false
-                    }, callback);
-            }
-            //get distance results
-            function callback(response, status) {
-                if (status !== google.maps.DistanceMatrixStatus.OK) {
-                    $('#result').html(err);
-                }
-                else {
-                    origin = response.originAddress[0];
-                    destination = response.destinationAddress[0];
-                    if (response.rows[0].elements[0].status === "ZERO RESULTS") {
-                        $('#result').html("Ei mahdollista reittiä näillä kulkuvälineillä");
-                    }
-                    else {
-                        let distance = response.rows[0].elements[0].distance;
-                        let duration = response.rows[0].elements[0].duration;
-                        let distance_in_kilo = distance.value / 1000;
-                        let duration_text = duration.text;
-                        $('#in_kilo').text(distance_in_kilo.toFixed(2));
-                        $('#duration_text').text(duration_text);
-                        let html = `
-                        <p>Matkan pituus: ${distance_in_kilo} km</p>
-                        <p>Matkan kesto: ${duration_text}</p>
-                        `;
-                        mainElem.innerHTML = html;
-                    }
-                }
-            }
+            });
         });
-        // Automatically center the map fitting all markers on the screen
-        map.fitBounds(bounds);
-    }
+
+
+
+
+
+
+
+        $(function () {
+            // add input listeners
+            google.maps.event.addDomListener(window, "load", function () {
+                var origin = new google.maps.places.Autocomplete(
+                    origin = myLatLng
+                )
+                var destination = new google.maps.places.Autocomplete(
+                    destination = {
+                        lat: latit,
+                        lng: longit
+                    }
+                );
+
+
+
+                // calculate distance
+                walkButton.addEventListener('click', function () {
+                    origin = myLatLng;
+                    destination = {
+                        lat: latit,
+                        lng: longit
+                    };
+                    var service = new google.maps.DistanceMatrixService();
+                    service.getDistanceMatrix(
+                        {
+                            origins: [origin],
+                            destinations: [destination],
+                            travelMode: google.maps.TravelMode.WALKING,
+                            unitSystem: google.maps.UnitSystem.metric, // kilometers and meters.
+                            avoidHighways: false,
+                            avoidTolls: false,
+                        },
+                        callback
+                    );
+                })
+
+                // calculate distance
+                cycleButton.addEventListener('click', function () {
+                    origin = myLatLng;
+                    destination = {
+                        lat: latit,
+                        lng: longit
+                    };
+                    var service = new google.maps.DistanceMatrixService();
+                    service.getDistanceMatrix(
+                        {
+                            origins: [origin],
+                            destinations: [destination],
+                            travelMode: google.maps.TravelMode.BICYCLING,
+                            unitSystem: google.maps.UnitSystem.metric, // kilometers and meters.
+                            avoidHighways: false,
+                            avoidTolls: false,
+                        },
+                        callback
+                    );
+                })
+
+                // calculate distance
+                driveButton.addEventListener('click', function () {
+                    origin = myLatLng;
+                    destination = {
+                        lat: latit,
+                        lng: longit
+                    };
+                    var service = new google.maps.DistanceMatrixService();
+                    service.getDistanceMatrix(
+                        {
+                            origins: [origin],
+                            destinations: [destination],
+                            travelMode: google.maps.TravelMode.DRIVING,
+                            unitSystem: google.maps.UnitSystem.metric, // kilometers and meters.
+                            avoidHighways: false,
+                            avoidTolls: false,
+                        },
+                        callback
+                    );
+                })
+
+                // get distance results
+                function callback(response, status) {
+                    if (status !== google.maps.DistanceMatrixStatus.OK) {
+                        $("#result").html(err);
+                    } else {
+                        var origin = response.originAddresses[0];
+                        console.log(origin);
+                        var destination = response.destinationAddresses[0];
+                        console.log(destination);
+                        if (response.rows[0].elements[0].status === "ZERO_RESULTS") {
+                            $("#result").html(
+                                "Better get on a plane. There are no roads between " +
+                                origin +
+                                " and " +
+                                destination
+                            );
+                        } else {
+                            var distance = response.rows[0].elements[0].distance;
+                            console.log(distance);
+                            var duration = response.rows[0].elements[0].duration;
+                            console.log(duration);
+                            console.log(response.rows[0].elements[0].distance);
+                            var distance_in_kilo = distance.value / 1000; // the kilom
+                            console.log(distance_in_kilo);
+                            var duration_text = duration.text;
+                            $("#kilo").html(`Matka ${distance_in_kilo.toFixed(2)} km`);
+                            $("#text").html(`Aika ${duration_text}`);
+                        }
+                    }
+                }
+
+                // print results on submit the form
+                $("#distance_form").submit(function (e) {
+                    e.preventDefault();
+                    calculateDistance();
+                })
+            })
+                // Automatically center the map fitting all markers on the screen
+                map.fitBounds(bounds);
+
+            })
+        }
 }
