@@ -208,7 +208,7 @@ body{
 .arvosteluLista figcaption {
     position: relative;
     font-size: 18px;
-    top: 0;
+    margin-bottom: 5px;
     right: 0;
     left: 0;
     background-color: #935DB5;
