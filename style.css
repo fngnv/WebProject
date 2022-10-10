@@ -100,9 +100,8 @@ body{
 
 .drinkReviewSection {
     margin-top: 6vh;
-    padding-left: 10px;
+
     width: 100%;
-    margin-right: 15px;
     font-size: 16px;
     line-height: 1.88em;
 }
@@ -256,7 +255,7 @@ body{
 
 #juomankuva {
     float: left;
-    margin: 3px 15px 5px 5px;
+    margin: 3px 15px 5px 15px;
 }
 
 #arvostelu {
@@ -266,7 +265,7 @@ body{
 #kirjoittaja {
     text-align: right;
     font-style: italic;
-    margin-right: 20px;
+    padding-right: 20px;
     margin-bottom: 60px;
 }
 
@@ -276,13 +275,14 @@ body{
 
 #kommentit-otsikko {
     text-align: left;
-    margin-left: 20px;
+    margin-left: 15px;
+    font-size: 30px;
 }
 
 #kommentointi-kentta {
     border: none;
     font-size: 20px;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 #kommentointi-nappi {
     border: none;
@@ -315,7 +315,8 @@ body{
 
 #kommentit li {
     list-style: none;
-    margin: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
     padding-left: 10px;
     border-left: #935DB5;
     border-left-style: dashed;
@@ -394,4 +395,8 @@ h1, h2, h3 {
     margin: auto;
     text-align: center;
     font-family: 'Anonymous Pro', monospace;
+}
+
+*{
+    outline: 1px solid red;
 }
