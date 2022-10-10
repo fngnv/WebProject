@@ -411,6 +411,36 @@ h1, h2, h3 {
     font-family: 'Anonymous Pro', monospace;
 }
 
+.video-container {
+    text-align: center;
+}
+
+#videoinfo {
+    margin-top: 15vh;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.88em;
+}
+
+#videonTietoihin {
+    border: none;
+    font-size: 20px;
+    background-color: #935DB5;
+    color: white;
+    margin: 10px;
+    padding: 10px 10px;
+    text-decoration: none;
+}
+
+#videonTietoihin:visited{
+    text-decoration: none;
+}
+
+#videonTietoihin:hover{
+    background-color: #fbff12;
+    color: #363537;
+    text-decoration: none;
+}
 
 /* Tällä on helppo testata missä menee rajat T. Kirsi
 *{
