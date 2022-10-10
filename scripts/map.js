@@ -1,4 +1,3 @@
-
 let myLatLng;
 let latit;
 let longit
@@ -29,6 +28,7 @@ function geoSuccess(position) {
     };
 
     let mapProp = {
+        //center: new google.maps.LatLng(latitude, longitude), // puts your current location at the centre of the map
         zoom: 11,
         mapTypeId: 'roadmap',
     };
@@ -172,6 +172,7 @@ function geoSuccess(position) {
 
 
         cycleButton.addEventListener('click', function () {
+            //calculateDistance();
             directionsService.route({
                 origin: myLatLng,
 

@@ -51,7 +51,8 @@ calcButton2.addEventListener('click', function () {
             cups = (lethalDose/160).toFixed(0);
         }
 
-        let htmlText = `
+        let htmlText;
+        htmlText = `
             Letaali kofeiiniannoksesi on ${lethalDose} mg kofeiinia <br><br>
             Se on yhtä kuin noin ${cups}&#1645; tölkkiä Megistä <br><br>
             &#1645;Tämä on vain suuntaa antava luku. Emme kuitenkaan suosittele ylittämään tätä rajaa

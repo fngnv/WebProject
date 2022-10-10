@@ -25,64 +25,39 @@
     <img class="logo" src="images/energyneer_logo_website.png">
     <a class="icon" id="iconID"  ><i class="fa fa-bars"></i></a>
     <a href="home.html">Etusivu</a>
-    <a class="active" href="calculator.html">Laskurit ja vinkit</a>
-    <a href="map.html">Kartta</a>
+    <a href="calculator.html">Laskurit ja vinkit</a>
+    <a class="active" href="map.html">Kartta</a>
     <a href="reviews.html">Juoma-arvostelut</a>
 </nav>
 
-  <section id="weather">
-      <h2>Katso kaupungisi sääennuste täältä!</h2>
-       <div id="weatherInputField">
-           <input type="text" class="keyboardInputClass" id="cityInput">
-           <input type="submit" class="buttonClass" id="showWeather" value="Hae">
-       </div>
-
-      <div id="weatherOutput">
-          <h1 id="cityName"></h1>
-          <p id="temp"></p>
-          <p id="desc"></p>
-      </div>
-  </section>
-
   <section id="map">
-    <h2>Pääkaupunkiseudun parhaimmat valikoimat</h2>
-
-      <form id="distance_form">
+    <h1>Pääkaupunkiseudun parhaimmat valikoimat energiajuomia</h1>
 
     <div id="googleMap"></div>
-    <button id="walkButton" class="buttonClass" type="submit" value="Calculate">Kävely</button>
-    <button id="cycleButton" class="buttonClass" type="submit" value="Calculate">Pyöräily</button>
-    <button id="driveButton" class="buttonClass" type="submit" value="Calculate">Autolla</button>
-      </form>
+    <div id="buttContainer">
+    <button id="walkButton" class="buttonClass">Kävely</button>
+    <button id="cycleButton" class="buttonClass">Pyöräily</button>
+    <button id="driveButton" class="buttonClass">Autolla</button>
+    </div>
 
-      <div id="result">
-          <ul class="list-group">
-              <p
-                      id="kilo"
-                      class="
-                  list-group-item
-                  d-flex
-                  justify-content-between
-                  align-items-center
-                "
-              >
-                  Matka
-              </p>
-              <p
-                      id="text"
-                      class="
-                  list-group-item
-                  d-flex
-                  justify-content-between
-                  align-items-center
-                                  "
-              >
-                  Aika
-              </p>
-          </ul>
-      </div>
+      <main>
+    <!-- matka ja aika -->
+    </main>
   </section>
 
+    <section id="weather">
+        <h2>Ennen kuin lähdet energiajuomien ostoksilla tarkista kaupungisi sääennuste täältä</h2>
+        <div id="weatherInputField">
+            <input type="text" class="keyboardInputClass" id="cityInput" >
+            <input type="submit" class="buttonClass" id="showWeather" value="Hae">
+        </div>
+
+        <div id="weatherOutput">
+            <h1 id="cityName"></h1>
+            <p id="temp"></p>
+            <p id="desc"></p>
+        </div>
+    </section>
 
   <footer id="footer"></footer>
   <script src="scripts/menu.js"></script>
