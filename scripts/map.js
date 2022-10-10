@@ -6,6 +6,8 @@
 let myLatLng;
 let latit;
 let longit;
+let map;
+let bounds;
 const walkButton = document.getElementById("walkButton");
 const cycleButton = document.getElementById("cycleButton");
 const driveButton = document.getElementById("driveButton");
@@ -38,7 +40,7 @@ function geoSuccess(position) {
         mapTypeId: 'roadmap',
     };
     //shows the map with given settings
-    let map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+    map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 
     let directionsService = new google.maps.DirectionsService;
     let directionsDisplay = new google.maps.DirectionsRenderer;
@@ -46,7 +48,7 @@ function geoSuccess(position) {
     //call renderer to display directions
     directionsDisplay.setMap(map);
 
-    let bounds = new google.maps.LatLngBounds();
+    bounds = new google.maps.LatLngBounds();
     //sets the markers to the map
     let markers = [
         ['', 60.217821, 24.810242],
@@ -191,32 +193,25 @@ function geoSuccess(position) {
         });
 
 
-        $(function () {
-            google.maps.event.addDomListener(window, "load", function () {
-                var origin = new google.maps.places.Autocomplete(
-                    origin = myLatLng
-                )
-                var destination = new google.maps.places.Autocomplete(
-                    destination = {
-                        lat: latit,
-                        lng: longit
-                    }
-                );
+       // $(function () {
+        //    google.maps.event.addDomListener(window, "load", function () {
+          //      let origin = new google.maps.places.Autocomplete()
+           //     let destination = new google.maps.places.Autocomplete();
 
                 // calculate walking distance when user chooses walking
                 walkButton.addEventListener('click', function () {
-                    origin = myLatLng;  // the start point for the route from users location
-                    destination = {     //destination coords of the route which is chosen by user from the markers
+                    let origin = myLatLng;  // the start point for the route from users location
+                    let destination = {     //destination coords of the route which is chosen by user from the markers
                         lat: latit,
                         lng: longit
                     };
-                    var service = new google.maps.DistanceMatrixService();
+                    let service = new google.maps.DistanceMatrixService();
                     service.getDistanceMatrix(
                         {
                             origins: [origin],
                             destinations: [destination],
-                            travelMode: google.maps.TravelMode.WALKING, //by walking
-                            unitSystem: google.maps.UnitSystem.metric, // kilometers and meters.
+                            travelMode: 'WALKING', //by walking
+                           // unitSystem: google.maps.UnitSystem.metric, // kilometers and meters.
                             avoidHighways: false,
                             avoidTolls: false,
                         },
@@ -226,18 +221,18 @@ function geoSuccess(position) {
 
                 // calculate distance when user chooses bicycling
                 cycleButton.addEventListener('click', function () {
-                    origin = myLatLng;
-                    destination = {
+                    let origin = myLatLng;
+                    let destination = {
                         lat: latit,
                         lng: longit
                     };
-                    var service = new google.maps.DistanceMatrixService();
+                    let service = new google.maps.DistanceMatrixService();
                     service.getDistanceMatrix(
                         {
                             origins: [origin],
                             destinations: [destination],
-                            travelMode: google.maps.TravelMode.BICYCLING,
-                            unitSystem: google.maps.UnitSystem.metric,
+                            travelMode: 'BICYCLING',
+                          //  unitSystem: google.maps.UnitSystem.metric,
                             avoidHighways: false,
                             avoidTolls: false,
                         },
@@ -247,18 +242,18 @@ function geoSuccess(position) {
 
                 // calculate distance when user chooses driving
                 driveButton.addEventListener('click', function () {
-                    origin = myLatLng;
-                    destination = {
+                    let origin = myLatLng;
+                    let destination = {
                         lat: latit,
                         lng: longit
                     };
-                    var service = new google.maps.DistanceMatrixService();
+                    let service = new google.maps.DistanceMatrixService();
                     service.getDistanceMatrix(
                         {
                             origins: [origin],
                             destinations: [destination],
-                            travelMode: google.maps.TravelMode.DRIVING,
-                            unitSystem: google.maps.UnitSystem.metric,
+                            travelMode: 'DRIVING',
+                         //   unitSystem: google.maps.UnitSystem.metric,
                             avoidHighways: false,
                             avoidTolls: false,
                         },
@@ -277,10 +272,7 @@ function geoSuccess(position) {
                         console.log(destination);
                         if (response.rows[0].elements[0].status === "ZERO_RESULTS") { //if there isn't possible routes between the points with given transit
                             $("#result").html(
-                                "Better get on a plane. There are no roads between " +
-                                origin +
-                                " and " +
-                                destination
+                                "Ei mahdollista reittiä näillä vaihtoehdoilla."
                             );
                         } else {
                             let distance = response.rows[0].elements[0].distance;   //distance of the points
@@ -302,10 +294,7 @@ function geoSuccess(position) {
                     e.preventDefault();
                     calculateDistance();
                 })
-            })
             // Automatically center the map fitting all markers on the screen
             map.fitBounds(bounds);
-
-        })
     }
 }
