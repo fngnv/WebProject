@@ -259,6 +259,12 @@ body{
     margin: 4vh auto;
 }
 
+#juomanimi {
+    text-align: center;
+    margin-left: 15px;
+    font-size: 30px;
+}
+
 #juomankuva {
     float: left;
     margin: 3px 15px 5px 15px;
