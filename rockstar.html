@@ -1,61 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Energyneer</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="scripts/jquery-3.6.1.min.js"></script>
-  <script type="text/javascript">
-    jQuery(document).ready(function(){
-      jQuery("#footer").load("footer.html");
-    });
-  </script>
-</head>
-<body>
-<nav class="topnav" id="mainNav">
-  <img class="logo" alt="Energyneer Logo" src="images/energyneer_logo_website.png">
-  <a class="icon" id="iconID"  ><i class="fa fa-bars"></i></a>
-  <a href="home.html">Etusivu</a>
-  <a href="calculator.html">Laskurit ja vinkit</a>
-  <a href="map.html">Kartta</a>
-  <a href="reviews.html">Juoma-arvostelut</a>
-</nav>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Energyneer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="scripts/jquery-3.6.1.min.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function(){
+        jQuery("#footer").load("footer.html");
+      });
+    </script>
+  </head>
+  <body>
+    <nav class="topnav" id="mainNav">
+      <img class="logo" alt="Energyneer Logo" src="images/energyneer_logo_website.png">
+      <a class="icon" id="iconID"  ><i class="fa fa-bars"></i></a>
+      <a href="home.html">Etusivu</a>
+      <a href="calculator.html">Laskurit ja vinkit</a>
+      <a href="map.html">Kartta</a>
+      <a href="reviews.html">Juoma-arvostelut</a>
+    </nav>
 
-<section class="drinkReviewSection">
-  <h1 id="rockstar-nosugar">Rockstar Original No Sugar</h1>
-  <img id="juomankuva" alt="Juoman Kuva" src="images/rockstar.jpg">
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta dolor lacus, dapibus viverra risus convallis sed. Sed sapien metus, ullamcorper sit amet sem vitae, placerat dictum metus. Donec sed placerat ex, nec interdum felis. Fusce id lectus massa. Nunc lacinia convallis massa, id feugiat velit blandit at.</p>
+    <section class="drinkReviewSection">
+      <h1 id="rockstar-nosugar">Rockstar Original No Sugar</h1>
+      <img id="juomankuva" alt="Juoman Kuva" src="images/rockstar.jpg">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta dolor lacus, dapibus viverra risus convallis sed. Sed sapien metus, ullamcorper sit amet sem vitae, placerat dictum metus. Donec sed placerat ex, nec interdum felis. Fusce id lectus massa. Nunc lacinia convallis massa, id feugiat velit blandit at.</p>
 
-  <p> Vähän lisää tekstiä tähän.</p>
-  <ul id="arvostelu">
-    <li><b>Saatavuus:</b> Hyvä</li>
-    <li><b>Kofeiinia:</b> 31 mg/100 ml</li>
-    <li><b>Pantti:</b> 15 senttiä</li>
-    <li><b>Arvosana:</b> 5/10</li>
-  </ul>
-  <p id="kirjoittaja">Tämän arvostelun on kirjoittanut S</p>
-</section>
+      <p> Vähän lisää tekstiä tähän.</p>
+      <ul id="arvostelu">
+        <li><b>Saatavuus:</b> Hyvä</li>
+        <li><b>Kofeiinia:</b> 31 mg/100 ml</li>
+        <li><b>Pantti:</b> 15 senttiä</li>
+        <li><b>Arvosana:</b> 5/10</li>
+      </ul>
+      <p id="kirjoittaja">Tämän arvostelun on kirjoittanut S</p>
+    </section>
 
+    <section class="kommentit-loota">
+      <h1 id="kommentit-otsikko">Kommentointi:</h1>
 
-<section class="kommentit-loota">
-  <h1 id="kommentit-otsikko">Kommentointi:</h1>
+      <div id="kommentointi-kentta">
+        <form id="kommentointi">
+          <input type="text" class="keyboardInputClass" id="kirjoita-tahan" placeholder="Kirjoita kommentti...">
+          <button class="buttonClass" id="kommentointi-nappi">Lähetä</button>
+          <button class="poista-kommentit" id="poista" type="button">Poista kommentit</button>
+        </form>
+        <ul id="kommentit" class="kommentit"></ul>
+      </div>
+    </section>
 
-  <div id="kommentointi-kentta">
-    <form id="kommentointi">
-      <input type="text" class="keyboardInputClass" id="kirjoita-tahan" placeholder="Kirjoita kommentti...">
-      <button class="buttonClass" id="kommentointi-nappi">Lähetä</button>
-      <button class="poista-kommentit" id="poista" type="button">Poista kommentit</button>
-    </form>
-    <ul id="kommentit" class="kommentit"></ul>
-  </div>
-</section>
-
-
-<script src="scripts/comment.js"></script>
-<script src="scripts/menu.js"></script>
-</body>
-<footer id="footer"></footer>
+    <script src="scripts/comment.js"></script>
+    <script src="scripts/menu.js"></script>
+  </body>
+  <footer id="footer"></footer>
 </html>
