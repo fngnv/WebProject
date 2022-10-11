@@ -65,6 +65,7 @@ body{
 
 #reviewsSection {
     margin-top: 15vh;
+    margin-bottom: 40px;
 }
 
 #reviewsSection h1 {
@@ -153,6 +154,7 @@ body{
     border: none;
     border-radius: 5px;
     margin: 5px;
+    margin-bottom: 15px;
 }
 
 .buttonClass {
@@ -425,6 +427,7 @@ h1, h2, h3 {
 
 .video-container {
     text-align: center;
+    margin-bottom: 40px;
 }
 
 #videoinfo {
@@ -432,6 +435,7 @@ h1, h2, h3 {
     text-align: center;
     font-size: 18px;
     line-height: 1.88em;
+    margin-bottom: 40px;
 }
 
 #videonTietoihin {
@@ -459,6 +463,16 @@ h1, h2, h3 {
         width: 100%;
         height: auto;
     }
+}
+
+iframe {
+    margin: 20px auto;
+}
+
+audio {
+    width: 300px;
+    height: 54px;
+    margin: 20px auto;
 }
 
 /* Tällä on helppo testata missä menee rajat T. Kirsi
