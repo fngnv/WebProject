@@ -1,3 +1,8 @@
+<!--Tehnyt Kirsi Tolonen
+Kommentointi laatikon javascript tiedosto joka tallentaa kommentit paikallisesti.-->
+
+
+<!-- Kommentit tallennetaan paikallisesti-->
 function supportsLocalStorage () {
     return typeof localStorage !== 'undefined';
 }
@@ -6,6 +11,8 @@ function haeKommentit() {
     return JSON.parse(localStorage.getItem('comments')) || [];
 }
 
+
+<!-- Kommentin tallentaminen-->
 function tallennaKommentit (comments, commentStr, action) {
     if (!commentStr && comments.indexOf(commentStr) < 0) {
         action(err);
@@ -20,6 +27,8 @@ function appendToStream(stream, str, index) {
     stream.appendChild(li);
 }
 
+
+<!-- Kommentin lataaminen-->
 function lataaKommentit(stream) {
     var comments = haeKommentit();
     if (comments) {
@@ -29,6 +38,8 @@ function lataaKommentit(stream) {
     }
 }
 
+
+<!-- Kommenttien poisto-->
 function tyhjennaKommentit(stream) {
     localStorage.removeItem('comments');
     stream.innerHTML = '';
@@ -37,6 +48,9 @@ function tyhjennaKommentit(stream) {
 supportsLocalStorage(); {
     initApp();}
 
+
+<!-- Kommentti kentän toiminnot ja elementit.
+    Napeista siirtyminen funktioihin-->
 function initApp() {
 
     var commentForm = document.getElementById('kommentointi'),
