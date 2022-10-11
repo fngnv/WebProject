@@ -2,9 +2,10 @@
 *
 * Tekijä: Vera F
 * 29.9.2022
+* Laskinten (hinta/mg sekä kuolettava määrä kofeiinia) toiminta
 * */
- //TODO: jos hinta on pienempi kuin x, kysytään juoman nimi, ja sit lisätään tietokantaan
 
+// hinta/mg kofeiinia
 const amountInput = document.getElementById('gram1');
 const priceInput = document.getElementById('price1');
 const calcButton = document.getElementById('calculate1');
@@ -13,7 +14,6 @@ let priceForMGram;
 
 calcButton.addEventListener('click', function () {
     if(amountInput.value === "" || priceInput.value === "") {
-        //errorMsg.innerText = 'Täytä kaikki kentät!'
         alert('Täytä kaikki kentät!');
     } else {
         let amountNumb = parseFloat(amountInput.value);
@@ -32,6 +32,7 @@ calcButton.addEventListener('click', function () {
     }
 })
 
+//kuolettavan kofeiinimäärän laskeminen
 const weightInput = document.getElementById('kg2');
 const calcButton2 = document.getElementById('calculate2');
 const resultField2 = document.getElementById('result2');

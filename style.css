@@ -83,6 +83,11 @@ body{
     margin-top: 15vh;
 }
 
+#calculatorsAndStuff h1 {
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
 #recipe {
     text-align: center;
 }
@@ -91,6 +96,9 @@ body{
     line-height: 1.6;
 }
 
+#recipe h3 {
+    margin: 20px;
+}
 
 .drinkReviewSection {
     margin-top: 15vh;

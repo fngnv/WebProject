@@ -1,7 +1,12 @@
+/*
+*Tekijä: Vera F
+* 2.10.2022
+* OpenWeather api:n toiminta
+* */
+
 const showButton = document.getElementById('showWeather');
 const cityNameInput = document.getElementById('cityInput');
 const cityNameOutput = document.getElementById('cityName');
-//const outputDiv = document.getElementById('weatherOutput');
 const descOutput = document.getElementById('desc');
 const tempOutput = document.getElementById('temp');
 
