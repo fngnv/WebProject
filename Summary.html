@@ -13,6 +13,13 @@
                 jQuery("#footer").load("footer.html");
             });
         </script>
+        <style>
+            pre {
+                width: 70%;
+                text-align: left;
+                border: #935DB5 2px;
+            }
+        </style>
     </head>
     <body>
         <section class="headerText">
@@ -33,6 +40,29 @@
             <p>Sovelluksen ominaisuudet  ja toiminnot. </p>
 
             <h2>API:t</h2>
+            <h3>OpenWeather API</h3>
+            <p>OpenWeather API antaa tämänhetkisiä säätietoja paikkakunnassa, jonka nimen käyttäjä syöttää hakukenttään</p>
+            <h4>Koodiesimerkkejä:</h4>
+            <pre>
+                <code>
+                    const cityNameOutput = document.getElementById('cityName');
+
+                    //api-kysely
+                    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityNameInput.value}&appid=cdda7f75f58e839c72c72d4cb3709bef&units=metric`)
+                    .then(resp => resp.json())
+                    .then(data => {
+                        console.log(data);
+                        let name = data['name'];
+                        let temperature = data['main']['temp'];
+                        let description = data['weather'][0]['description'];
+                    })
+
+                    .catch(error => console.log(error));
+                </code>
+            </pre>
+
+            <h3>Google Maps API</h3>
+            <p>Tämä API mahdollistaa Google Mapsin reititystoimintojen käyttöä sivustolla</p>
             <p>Käytetyt APIt koodiesimerkkeineen
             </p>
 
