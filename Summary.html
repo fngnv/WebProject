@@ -34,15 +34,14 @@
             valita itsellensä sopivin energiajuomavaihtoehto</p>
             <p><b>Käyttäjäryhmät: </b>Ihmiset, joilla on keskittymisongelmia; kofeiiniaddiktit</p>
             <p><b>Sisältö:</b> </p>
-            <p>Sovelluksen yleiskuvaus (käyttötarkoitus, käyttäjäryhmät, sisältö/data yleisellä tasolla)</p>
 
             <h2>Ominaisuudet</h2>
             <p>Sovelluksen ominaisuudet  ja toiminnot. </p>
 
             <h2>API:t</h2>
             <h3>OpenWeather API</h3>
-            <p>OpenWeather API antaa tämänhetkisiä säätietoja paikkakunnassa, jonka nimen käyttäjä syöttää hakukenttään</p>
-            <h4>Koodiesimerkkejä:</h4>
+            <p>OpenWeather API antaa tämänhetkisiä säätietoja paikkakunnasta, jonka nimen käyttäjä syöttää hakukenttään</p>
+            <h4>Koodiesimerkki:</h4>
             <pre>
                 <code>
                     const cityNameOutput = document.getElementById('cityName');
@@ -63,8 +62,38 @@
 
             <h3>Google Maps API</h3>
             <p>Tämä API mahdollistaa Google Mapsin reititystoimintojen käyttöä sivustolla</p>
-            <p>Käytetyt APIt koodiesimerkkeineen
-            </p>
+            <h4>Koodiesimerkki</h4>
+            <pre>
+                <code>
+                    //reitin pituuden laskeminen
+                    function callback(response, status) {
+                    if (status !== google.maps.DistanceMatrixStatus.OK) {
+                        $("#result").html(err); //gives error if calculating distance doesn't work
+                    } else {
+                        let origin = response.originAddresses[0];
+                        console.log(origin);
+                        let destination = response.destinationAddresses[0];
+                        console.log(destination);
+                        if (response.rows[0].elements[0].status === "ZERO_RESULTS") { //if there isn't possible routes between the points with given transit
+                            $("#result").html(
+                                "Ei mahdollista reittiä näillä vaihtoehdoilla."
+                            );
+                        } else {
+                            let distance = response.rows[0].elements[0].distance;   //distance of the points
+                            console.log(distance);
+                            let duration = response.rows[0].elements[0].duration;   //duration between the points
+                            console.log(duration);
+                            console.log(response.rows[0].elements[0].distance);
+                            let distance_in_kilo = distance.value / 1000; //distance in km
+                            console.log(distance_in_kilo);
+                            let duration_text = duration.text;  //duration in hours and mins
+                            $("#kilo").html(`Matka ${distance_in_kilo.toFixed(2)} km`);
+                            $("#text").html(`Aika ${duration_text}`);
+                        }
+                    }
+                }
+                </code>
+            </pre>
 
             <h2>Muuta kiinnostavaa</h2>
             <p>Muut käyttämänne tekniikat (esim. CSS-animaatiot + muut jotka haluatte mainita)
