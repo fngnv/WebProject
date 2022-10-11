@@ -1,6 +1,15 @@
-<!--Tehnyt Kirsi Tolonen
-Kommentointi laatikon javascript tiedosto joka tallentaa kommentit paikallisesti.-->
+<!--Tehnyt Kirsi Tolonen-->
 
+<!-- Tarkistetaan tallennustila-->
+function hideWarning() {
+    document.getElementById('no_go').style.display = 'none';
+}
+
+function showWarning () {
+    document.getElementById('no_go').style.display = 'block';
+    document.getElementById('no_go').innerHTML = '<b>VAROITUS:</b> Sovellus ei toimi, jos paikallinen tallennustila on poissa käytöstä tai ei hyväksytty.';
+    console.warn('Kommentointi ei toimi koska tallennustila on poissa käytöstä tai ei hyväksytty.');
+}
 
 <!-- Kommentit tallennetaan paikallisesti-->
 function supportsLocalStorage () {
@@ -45,13 +54,17 @@ function tyhjennaKommentit(stream) {
     stream.innerHTML = '';
 }
 
-supportsLocalStorage(); {
-    initApp();}
+
+if (supportsLocalStorage()) {
+    initApp();
+} else {
+    showWarning();
+}
 
 
-<!-- Kommentti kentän toiminnot ja elementit.
-    Napeista siirtyminen funktioihin-->
+<!-- Kommentti kentän toiminnot ja elementit. Napeista siirtyminen funktioihin-->
 function initApp() {
+    hideWarning();
 
     var commentForm = document.getElementById('kommentointi'),
         commentList = document.getElementById('kommentit'),
@@ -59,6 +72,10 @@ function initApp() {
         poista = document.getElementById('poista');
 
     lataaKommentit(commentList);
+
+    poista.addEventListener('click', function() {
+        tyhjennaKommentit(commentList);
+    }, true);
 
     commentForm.addEventListener('submit', function (event) {
         event.preventDefault();
@@ -76,7 +93,16 @@ function initApp() {
         });
     }, true);
 
-    poista.addEventListener('click', function() {
-        tyhjennaKommentit(commentList);
-    }, true);
 }
+
+
+
+
+
+
+
+
+
+
+
+
