@@ -80,7 +80,7 @@ body{
 #calculatorsAndStuff {
     text-align: center;
     width: 70%;
-    margin-top: 15vh;
+    margin-top: 10vh;
 }
 
 #recipe {
@@ -153,6 +153,7 @@ body{
     border: none;
     border-radius: 5px;
     margin: 5px;
+    margin-bottom: 15px;
 }
 
 .buttonClass {
@@ -163,6 +164,7 @@ body{
     font-size: 20px;
     border: none;
     border-radius: 2px;
+    margin: auto;
 }
 
 .buttonClass:hover{
@@ -187,10 +189,7 @@ body{
 #weather {
     width: 80%;
     margin: 40px auto;
-}
-
-#weather h2 {
-    text-align: left;
+    text-align: center;
 }
 
 .arvosteluLista ul {
@@ -222,13 +221,13 @@ body{
 .headerText {
     text-align: center;
     margin: 25px;
-    margin-top: 20vh;
+    margin-top: 15vh;
 }
 
 .headerText p {
     font-size: 18px;
     width: 65%;
-    margin: 20px auto;
+    margin: 40px auto;
     line-height: 1.88em;
 }
 
@@ -385,10 +384,16 @@ footer a:hover{
     }
 }
 
-h1, h2, h3 {
+h1, h2 {
     font-family: 'Anonymous Pro', monospace;
     text-align: center;
-    margin: 0;
+    margin: 40px auto;
+}
+
+h3 {
+    font-family: 'Anonymous Pro', monospace;
+    text-align: center;
+    margin: 0px;
 }
 
 #map h1 {
@@ -421,6 +426,7 @@ h1, h2, h3 {
 
 .video-container {
     text-align: center;
+    margin-bottom: 40px;
 }
 
 #videoinfo {
@@ -455,6 +461,16 @@ h1, h2, h3 {
         width: 100%;
         height: auto;
     }
+}
+
+iframe {
+    margin-bottom: 40px;
+}
+
+audio {
+    width: 300px;
+    height: 54px;
+    margin: 20px auto;
 }
 
 /* Tällä on helppo testata missä menee rajat T. Kirsi
