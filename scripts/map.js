@@ -192,12 +192,6 @@ function geoSuccess(position) {
             });
         });
 
-
-       // $(function () {
-        //    google.maps.event.addDomListener(window, "load", function () {
-          //      let origin = new google.maps.places.Autocomplete()
-           //     let destination = new google.maps.places.Autocomplete();
-
                 // calculate walking distance when user chooses walking
                 walkButton.addEventListener('click', function () {
                     let origin = myLatLng;  // the start point for the route from users location
@@ -211,7 +205,6 @@ function geoSuccess(position) {
                             origins: [origin],
                             destinations: [destination],
                             travelMode: 'WALKING', //by walking
-                           // unitSystem: google.maps.UnitSystem.metric, // kilometers and meters.
                             avoidHighways: false,
                             avoidTolls: false,
                         },
@@ -232,7 +225,6 @@ function geoSuccess(position) {
                             origins: [origin],
                             destinations: [destination],
                             travelMode: 'BICYCLING',
-                          //  unitSystem: google.maps.UnitSystem.metric,
                             avoidHighways: false,
                             avoidTolls: false,
                         },
@@ -253,7 +245,6 @@ function geoSuccess(position) {
                             origins: [origin],
                             destinations: [destination],
                             travelMode: 'DRIVING',
-                         //   unitSystem: google.maps.UnitSystem.metric,
                             avoidHighways: false,
                             avoidTolls: false,
                         },
